@@ -6,4 +6,5 @@ WORKDIR /tests
 RUN npm install
 RUN npx playwright install
 RUN npx playwright install-deps
-RUN npx playwright test
+CMD npm run test
+    #npx playwright test

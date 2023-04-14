@@ -1,21 +1,21 @@
 name: Playwright Tests
 on:
   push:
-    branches: [ master ]
-  
+    branches: [ master ]  
 jobs:
   npm-test:    
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
           node-version: 16.*
         if: always()
       - run: docker build . --file Dockerfile.focal -t plimage
       - run: docker run -d --name plcontainer plimage
       - run: sudo docker cp plcontainer:./tests/allure-results allure-results
-        with:
+	    - uses: actions/upload-artifact@master
+      with:
           name: allure-results
           path: allure-results
       - uses: actions/checkout@v2
@@ -39,6 +39,4 @@ jobs:
            PUBLISH_BRANCH: gh-pages
            PUBLISH_DIR: allure_history
            
-         
-         
-         
+           

@@ -2,24 +2,34 @@
 const { devices } = require('@playwright/test');
 
 const config = {
-  testDir: './tests',
-  
+  testDir: './tests',  
+  testMatch: '**spec.js',
   timeout: 30 * 1000,
   expect: {
-
     timeout: 5000
   },
+  fullyParallel: false,
 
-  reporter: 'html',
+  forbidOnly: !!process.env.CI,
+  
+  // retries: process.env.CI ? 2 : 0,
 
-  use: {
-    browserName : "chromium",
-    headless : true
-  },
+  // workers: process.env.CI ? 1 : undefined,
 
+  reporter: [['html',{
+    outputFile:'./test-results/report.html',
+    open:'never'
+  }],['allure-playwright']],
 
-};
-
-
-
-module.exports = config;
+  projects: [
+    {
+      name : "chromium",  
+      use: {          
+       headless : true,
+       screenshot: 'on'
+      },
+    },
+    // baseURL: process.env.CI ? 'http://localhost:3001' : 'http://localhost:3000'
+  ]
+  };
+  module.exports = config;

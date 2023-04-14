@@ -25,7 +25,7 @@ const config = {
     {
       name : "chromium",  
       use: {          
-       headless : true,
+       headless : false,
        screenshot: 'on'
       },
     },

@@ -32,11 +32,11 @@ jobs:
            gh_pages: gh-pages
            allure_report: allure-report
            allure_history: allure-history
-      - uses: peaceiris/action-gh-pages@v2
-        if: always()
-        env:
-           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}             
-           PUBLISH_BRANCH: gh-pages
-           PUBLISH_DIR: allure_history
+      # - uses: peaceiris/action-gh-pages@v2
+      #   if: always()
+      #   env:
+      #      PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}             
+      #      PUBLISH_BRANCH: gh-pages
+      #      PUBLISH_DIR: allure_history
            
            

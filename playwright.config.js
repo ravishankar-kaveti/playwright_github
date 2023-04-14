@@ -29,7 +29,7 @@ const config = {
        screenshot: 'on'
       },
     },
-    // baseURL: process.env.CI ? 'http://localhost:3001' : 'http://localhost:3000'
+    
   ]
   };
   module.exports = config;

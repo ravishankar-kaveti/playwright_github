@@ -1,1 +1,1 @@
-# playwright_github
+# playwright_github integration

@@ -10,7 +10,7 @@ const config = {
   },
   fullyParallel: false,
 
-  forbidOnly: !!process.env.CI,
+  //forbidOnly: !!process.env.CI,
   
   // retries: process.env.CI ? 2 : 0,
 
@@ -28,8 +28,7 @@ const config = {
        headless : false,
        screenshot: 'on'
       },
-    },
-    
+    },    
   ]
   };
   module.exports = config;

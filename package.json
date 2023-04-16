@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cicd": "npx playwrigtht test"
+    "cicd": "npx playwright test"
   },
   "keywords": [],
   "author": "",

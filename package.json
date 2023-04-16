@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "cicd": "npx playwrigtht test"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
